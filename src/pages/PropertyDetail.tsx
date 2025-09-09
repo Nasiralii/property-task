@@ -19,7 +19,7 @@ import {
   Wifi,
   Wind
 } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -61,7 +61,9 @@ const PropertyDetail = () => {
     'Room Service': Shield,
     'Wine Tasting': Coffee,
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
